@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-3" *ngFor="let product of products">
+    <div class="form-group text-center">
+      <img
+        src="{{product.imageUrl}}"
+        alt="" style="width: 200px; height: 200px">
+      <h5>{{product.name}}</h5>
+      <h1 class="text-danger">{{product.price | currency}}</h1>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <input type="number" min="1" id="quantity-{{ product.name }}" class="form-control" value="1">
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-warning mt-2" (click)="addBasket(product)">Take</button>
+    </div>
+  </div>
+</div>
